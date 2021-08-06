@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Caneta BIC Preta",
-      "price": 5.89
-    },
-    {
       "id": 2,
       "name": "Notebook Mac Pro",
       "price": 12000.89
@@ -13,12 +8,22 @@
     {
       "id": 3,
       "name": "Geladeira",
-      "price": "1913.99"
+      "price": "1913.90"
+    },
+    {
+      "name": "Camiseta",
+      "price": "1913.99",
+      "id": 4
+    },
+    {
+      "name": "Fomulario Test",
+      "price": "4.50",
+      "id": 6
     },
     {
       "name": "Geladeira",
-      "price": "1913.99",
-      "id": 4
+      "price": "1500",
+      "id": 7
     }
   ]
 }
