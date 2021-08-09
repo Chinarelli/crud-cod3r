@@ -12,31 +12,32 @@ import { Product } from '../product.model';
 export class ProductDeleteComponent implements OnInit {
 
   product: Product = {
+    id: 0,
     name: "",
     price: 0
   }
 
   constructor(
-    private productsService: ProductsService,
+    private productService: ProductsService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get("id") || "";
-    this.productsService.readById(id).subscribe(product => {
+    const id = Number.parseInt(this.route.snapshot.paramMap.get('id') || "0");
+    this.productService.readById(id).subscribe(product => {
       this.product = product;
     })
   }
 
-  deleteProduct() {
-    this.productsService.delete(this.product).subscribe(() => {
-      this.productsService.showMessage("Produto excluido com sucesso!");
+  deleteProduct(): void {
+    this.productService.delete(this.product.id || 0).subscribe(() => {
+      this.productService.showMessage("Produto excluido com sucesso!");
       this.router.navigate(["/products"]);
     })
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate(["/products"]);
   }
 }
